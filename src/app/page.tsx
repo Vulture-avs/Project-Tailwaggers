@@ -1,101 +1,125 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, HeartPulse, ShieldCheck, Coins } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col gap-24 pb-24 bg-background">
+      {/* Aesthetic Hero Section */}
+      <section className="relative overflow-hidden pt-32 lg:pt-48 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium mb-8 bg-muted/50 text-muted-foreground backdrop-blur-md">
+            <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
+            Project Shelter 2.0 is Live
+          </div>
+          <h1 className="mx-auto max-w-5xl font-display text-5xl font-extrabold tracking-tighter sm:text-7xl md:text-8xl text-balance bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+            Save a Life. <br /> Earn a Legacy.
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed text-balance">
+            The first transparent donation platform for stray animal welfare. 
+            Contribute to verified shelters and receive a unique, collectible NFT as immutable proof of your impact.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <Link href="/donate" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full rounded-full h-12 px-8 text-base">
+                Donate Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/animals" className="w-full sm:w-auto">
+              <Button size="lg" variant="secondary" className="w-full rounded-full h-12 px-8 text-base">
+                Meet the Animals
+              </Button>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Featured Aesthetic Image Grid */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
+            <Image 
+              src="/dog_portrait.png" 
+              alt="Sad brown and white dog needing help" 
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 text-white">
+              <h3 className="text-2xl font-display font-bold mb-2">Bella's Story</h3>
+              <p className="text-white/80 line-clamp-2">Found injured near the highway. She needs immediate surgery and your support.</p>
+              <Link href="/donate" className="inline-flex items-center mt-4 text-sm font-medium hover:underline">
+                Read more <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group md:translate-y-12">
+            <Image 
+              src="/cat_portrait.png" 
+              alt="Hopeful orange tabby cat" 
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 text-white">
+              <h3 className="text-2xl font-display font-bold mb-2">Oliver's Journey</h3>
+              <p className="text-white/80 line-clamp-2">Rescued from a fire, Oliver is showing incredible resilience and hope.</p>
+              <Link href="/donate" className="inline-flex items-center mt-4 text-sm font-medium hover:underline">
+                Read more <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Minimal Stats */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-24">
+        <div className="max-w-5xl mx-auto border-y border-border py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="text-5xl font-display font-bold tracking-tighter mb-2">1,248</div>
+            <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Animals Helped</div>
+          </div>
+          <div className="text-center md:border-x border-border">
+            <div className="text-5xl font-display font-bold tracking-tighter mb-2">$45K+</div>
+            <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Donations Raised</div>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-display font-bold tracking-tighter mb-2">12</div>
+            <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Verified Partners</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Minimal NFT Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="max-w-5xl mx-auto rounded-3xl bg-muted/50 p-8 md:p-16 text-center">
+          <ShieldCheck className="h-12 w-12 text-primary mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 tracking-tight">
+            Your Impact, Minted Forever
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
+            Every time you donate, a unique NFT is automatically minted directly to your wallet. 
+            These aren't just digital art—they are verifiable proofs of your compassion.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+             <div className="p-4 rounded-2xl bg-background border">
+               <div className="font-semibold text-lg mb-1">Bronze Tier</div>
+               <div className="text-muted-foreground text-sm">$10 - $50</div>
+             </div>
+             <div className="p-4 rounded-2xl bg-background border">
+               <div className="font-semibold text-lg mb-1">Silver Tier</div>
+               <div className="text-muted-foreground text-sm">$51 - $200</div>
+             </div>
+             <div className="p-4 rounded-2xl bg-background border border-primary/50">
+               <div className="font-semibold text-lg mb-1 text-primary">Gold Tier</div>
+               <div className="text-muted-foreground text-sm">$201+</div>
+             </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
